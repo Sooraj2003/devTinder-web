@@ -1,7 +1,11 @@
+import { useSelector } from "react-redux"
+import ProfileEdit from "./ProfileEdit"
+
 const Profile = () => {
-  return (
-    <div>
-      Profile
+  const user = useSelector((store)=>store.user);
+  return user && (
+    <div className="">
+      <ProfileEdit/>
     </div>
   )
 }
