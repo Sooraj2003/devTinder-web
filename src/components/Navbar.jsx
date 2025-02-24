@@ -25,7 +25,7 @@ const Navbar = () => {
     <div className="flex-1">
       <Link to="/" className="btn btn-ghost text-xl">❤️ DevTinder</Link>
     </div>
-    <p>{user && "Welcome, "+user.firstName}</p>
+    <p className="text-xs mx-0 md:text-xl">{user && "Welcome, "+user.firstName}</p>
     <div className="flex-none">
       <div className="dropdown dropdown-end">
         <div

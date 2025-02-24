@@ -11,17 +11,25 @@ const Feed = () => {
   const feed = useSelector((store)=>store?.feed);
 
   const fetchFeed = async ()=>{
-   const res = await axios.get(BASE_URL+"/user/feed",{withCredentials:true});
-   dispatch(addFeed(res?.data?.feed))
+    try{
+      const res = await axios.get(BASE_URL+"/user/feed",{withCredentials:true});
+      dispatch(addFeed(res?.data?.feed))
+    }catch(err){
+      console.error(err)
+    }
+   
   }
 
   useEffect(()=>{
-    if(feed) return;
     fetchFeed();
   },[])
 
+  if(!feed) return;
+
+  if(feed.length<=0) return <h1 className="text-center text-3xl font-bold my-4">All feeds are over wait for new users to join</h1>
+
   return feed && (
-    <div className="flex justify-center mt-20">
+    <div className="flex justify-center mt-5 h-screen">
       <Card feed={feed[0]}/>
     </div>
   )
