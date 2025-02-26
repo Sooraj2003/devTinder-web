@@ -60,7 +60,7 @@ const Login = () => {
   </div>
   <input type="text" value={firstName} onChange={(e)=>setFirstName(e.target.value)} placeholder="Type here" className="input input-bordered w-full max-w-xs" />
   <div className="label">
-    <span className="label-text">Email Id</span>
+    <span className="label-text">Last Name</span>
   </div>
   <input type="text" value={lastName} onChange={(e)=>setLastName(e.target.value)} placeholder="Type here" className="input input-bordered w-full max-w-xs" /></>}
   <div className="label">
@@ -71,7 +71,7 @@ const Login = () => {
   <div className="label">
     <span className="label-text">Password</span>
   </div>
-  <input type="text" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+  <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Type here" className="input input-bordered w-full max-w-xs" />
  {error && <p className="text-left text-red-600 mt-4">{error}</p>}
   <p onClick={()=>setIsLogin((state)=>!state)}className="mt-4 cursor-pointer text-sm">{isLogin ? "Not yet registered? Sign up" : "Already registered? Login now"}</p>
 </label>
